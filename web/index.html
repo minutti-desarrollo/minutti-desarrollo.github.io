@@ -11,174 +11,50 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
         <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
     </head>
     <body>
         <div>Prueba JQuery</div>
-        <table>
-            
-            <tr>
-            
-            <td id="1_1"></td>
-            
-            <td id="1_2"></td>
-            
-            <td id="1_3"></td>
-            
-            <td id="1_4"></td>
-            
-            <td id="1_5"></td>
-            
-            <td id="1_6"></td>
-            
-            <td id="1_7"></td>
-            
-            <td id="1_8"></td>
-            
-        </tr>
         
-            <tr>
-            
-            <td id="2_1"></td>
-            
-            <td id="2_2"></td>
-            
-            <td id="2_3"></td>
-            
-            <td id="2_4"></td>
-            
-            <td id="2_5"></td>
-            
-            <td id="2_6"></td>
-            
-            <td id="2_7"></td>
-            
-            <td id="2_8"></td>
-            
-        </tr>
-        
-            <tr>
-            
-            <td id="3_1"></td>
-            
-            <td id="3_2"></td>
-            
-            <td id="3_3"></td>
-            
-            <td id="3_4"></td>
-            
-            <td id="3_5"></td>
-            
-            <td id="3_6"></td>
-            
-            <td id="3_7"></td>
-            
-            <td id="3_8"></td>
-            
-        </tr>
-        
-            <tr>
-            
-            <td id="4_1"></td>
-            
-            <td id="4_2"></td>
-            
-            <td id="4_3"></td>
-            
-            <td id="4_4"></td>
-            
-            <td id="4_5"></td>
-            
-            <td id="4_6"></td>
-            
-            <td id="4_7"></td>
-            
-            <td id="4_8"></td>
-            
-        </tr>
-        
-            <tr>
-            
-            <td id="5_1"></td>
-            
-            <td id="5_2"></td>
-            
-            <td id="5_3"></td>
-            
-            <td id="5_4"></td>
-            
-            <td id="5_5"></td>
-            
-            <td id="5_6"></td>
-            
-            <td id="5_7"></td>
-            
-            <td id="5_8"></td>
-            
-        </tr>
-        
-            <tr>
-            
-            <td id="6_1"></td>
-            
-            <td id="6_2"></td>
-            
-            <td id="6_3"></td>
-            
-            <td id="6_4"></td>
-            
-            <td id="6_5"></td>
-            
-            <td id="6_6"></td>
-            
-            <td id="6_7"></td>
-            
-            <td id="6_8"></td>
-            
-        </tr>
-        
-            <tr>
-            
-            <td id="7_1"></td>
-            
-            <td id="7_2"></td>
-            
-            <td id="7_3"></td>
-            
-            <td id="7_4"></td>
-            
-            <td id="7_5"></td>
-            
-            <td id="7_6"></td>
-            
-            <td id="7_7"></td>
-            
-            <td id="7_8"></td>
-            
-        </tr>
-        
-            <tr>
-            
-            <td id="8_1"></td>
-            
-            <td id="8_2"></td>
-            
-            <td id="8_3"></td>
-            
-            <td id="8_4"></td>
-            
-            <td id="8_5"></td>
-            
-            <td id="8_6"></td>
-            
-            <td id="8_7"></td>
-            
-            <td id="8_8"></td>
-            
-        </tr>
-        
-        </table>
-        <script>
-            
-        </script>
+        <div id="main">
+    <h1>You're ready to use Parse!</h1>
+
+    <p>Read the documentation and start building your JavaScript app:</p>
+
+    <ul>
+      <li><a href="https://www.parse.com/docs/js_guide">Parse JavaScript Guide</a></li>
+      <li><a href="https://www.parse.com/docs/js">Parse JavaScript API Documentation</a></li>
+    </ul>
+
+    <div style="display:none" class="error">
+      Looks like there was a problem saving the test object. Make sure you've set your application ID and javascript key correctly in the call to <code>Parse.initialize</code> in this file.
+    </div>
+
+    <div style="display:none" class="success">
+      <p>We've also just created your first object using the following code:</p>
+      
+        <code>
+          var TestObject = Parse.Object.extend("TestObject");<br/>
+          var testObject = new TestObject();<br/>
+          testObject.save({foo: "bar"});
+        </code>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    Parse.initialize("APPLICATION_ID", "JAVASCRIPT_KEY");
+    
+    var TestObject = Parse.Object.extend("TestObject");
+    var testObject = new TestObject();
+      testObject.save({foo: "bar"}, {
+      success: function(object) {
+        $(".success").show();
+      },
+      error: function(model, error) {
+        $(".error").show();
+      }
+    });
+  </script>
     </body>
 </html>
