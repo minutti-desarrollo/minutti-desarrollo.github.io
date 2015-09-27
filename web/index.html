@@ -45,16 +45,7 @@ and open the template in the editor.
   <script type="text/javascript">
     Parse.initialize("PJZKqRmuFz3RU6923pqZvmO559zC42SsYLpkxQMN", "wfLdTROroIXJdTTlHHPbonEb9cnXnttToAq6cQWu");
     
-    var TestObject = Parse.Object.extend("TestObject");
-    var testObject = new TestObject();
-      testObject.save({foo: "bar"}, {
-      success: function(object) {
-        $(".success").show();
-      },
-      error: function(model, error) {
-        $(".error").show();
-      }
-    });
+    
     
     var user = new Parse.User();
     user.set("username", "my name");
