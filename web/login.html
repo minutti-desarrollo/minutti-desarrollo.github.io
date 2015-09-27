@@ -24,13 +24,13 @@ and open the template in the editor.
             Parse.User.logIn("prueba", "prueba", {
             success: function(user) {
               // Do stuff after successful login.
-              divResultado.textContent = "CORRECTO";
+              divResultado.innerHTML = "CORRECTO";
             },
             error: function(user, error) {
               // The login failed. Check error to see why.
               
               
-              divResultado.textContent = "ERROR";
+              divResultado.innerHTML = "ERROR";
               
             }
           });
