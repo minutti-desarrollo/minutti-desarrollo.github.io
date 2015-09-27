@@ -21,7 +21,7 @@ and open the template in the editor.
             
             var divResultado = document.getElementById("resultado");
             
-            Parse.User.logIn("prueba", "prueba", {
+            Parse.User.logIn("username", "password", {
             success: function(user) {
               // Do stuff after successful login.
               divResultado.innerText = "CORRECTO";
